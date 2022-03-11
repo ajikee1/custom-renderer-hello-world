@@ -178,11 +178,18 @@ const HostConfig = {
         domElement.focus()
     },
 
+    /*
+        Tells how to append our in-memory tree to the root div
+
+        @parent: The root div or the container.
+        @child: The child dom node tree or the in-memory tree.
+     */
     appendChildToContainer: (parent, child) => {
         parent.appendChild(child)
     },
 
     supportsMutation: true,
+
 }
 
 /* Creating an instance of the Reconciler and passing in the hostConfig as its parameter */
