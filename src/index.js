@@ -1,25 +1,13 @@
-/*
-    The idea is to render the hello world in the browser DOM using a custom renderer implementation instead of the react-dom one.
- */
+import React, { Component } from 'react';
+import CustomRenderer from "./renderer";
 
-import React from 'react';
-/* import ReactDOM from 'react-dom'; default renderer. Replaced with custom renderer. */
-import CustomRenderer from './renderer';
-
-
-const Text = props => {
-  return <p className={props.className}>{props.content}</p>
+class App extends Component {
+    render() {
+        return (<text>
+        <text>{String('HELLO')}</text>
+        <text>{String('TISTA')}</text>
+        </text>);
+    }
 }
 
-const App = () => {
-  return (
-      <div>
-        <Text className="hello-class" content="Hello" />
-        <span style={{ color: 'blue' }}>World</span>
-      </div>
-  )
-}
-
-// ReactDOM.render(<React.StrictMode> <App /> </React.StrictMode>, document.getElementById('root'));
-CustomRenderer.render(<App />, document.getElementById('root'));
-
+CustomRenderer.render(<App />);
